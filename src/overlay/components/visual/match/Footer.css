@@ -1,0 +1,37 @@
+.match-footer {
+    position: absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    height: 7em;
+    padding: .25em;
+    background-color: rgba(0,0,0,.5);
+}
+
+.match-footer .triplet {
+    align-items: flex-end;
+}
+
+.match-footer > .triplet > div {
+    width: auto;
+}
+
+.match-footer > .triplet > div:nth-child(2) {
+    width: 100%;
+    margin: 0 2em;
+    flex: 0 1 auto;
+}
+
+.match-footer .triplet > div {
+    margin-bottom: 0;
+}
+
+.match-footer .screenshot {
+    position: relative;
+    height: 7em!important;
+}
+.match-footer .screenshot img {
+    position: absolute;
+    left:0;
+    bottom: 0;
+}

@@ -1,0 +1,22 @@
+.triplet {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+    > div {
+        flex: 0 0 auto;
+        text-align: center;
+        margin: auto;
+        width: 30%;
+
+        &:first-child {
+            text-align: left;
+            margin-left: 0;
+        }
+
+        &:last-child {
+            text-align: right;
+            margin-right: 0;
+        }
+    }
+}

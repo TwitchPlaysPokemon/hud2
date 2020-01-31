@@ -1,0 +1,16 @@
+ .countdown {
+
+    .label, .duration > span > span {
+        font-weight: 500;
+    }
+
+    .label {
+        margin-right: .15em;
+    }
+
+    .duration > span {
+        margin: 0 .15em;
+        font-variant-numeric: tabular-nums;
+    }
+    
+ }

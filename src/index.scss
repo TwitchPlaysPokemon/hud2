@@ -1,0 +1,19 @@
+@import-normalize; /* bring in normalize.css styles */
+@import "./overlay/fonts/fonts.scss";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Acumin Pro Condensed, sans-serif;
+    background-color: darkslategray;
+    font-size: 16px;
+    color: white;
+  }
+  
+  @media only screen and (        max-device-pixel-ratio: 1) and (min-width: 1921px),
+  only screen and (                max-resolution: 96dpi) and (min-width: 1921px),
+  only screen and (                max-resolution: 1dppx) and (min-width: 1921px) {
+    body {
+      font-size: 64px; /* quad for 4k */
+    }
+  } 

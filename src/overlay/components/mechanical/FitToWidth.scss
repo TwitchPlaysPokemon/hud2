@@ -1,0 +1,9 @@
+.fit-to-width-container {
+    min-height: 1em;
+    text-align: left;
+
+    > div {
+        transform-origin: left;
+        display: inline-block;
+    }
+}

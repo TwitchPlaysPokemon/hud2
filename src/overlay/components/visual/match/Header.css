@@ -1,0 +1,18 @@
+.match-header {
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    height: 2.5em;
+    padding: .25em;
+    background-color: rgba(0,0,0,.5);
+}
+
+.match-header .triplet > div {
+    padding: .1em;
+}
+
+.match-header .next-game > .label {
+    text-transform: uppercase;
+}
+
