@@ -14,20 +14,7 @@ export default class Footer extends React.Component {
                 <Triplet>
                     <FooterCard title="Pokémon Pinball">
                     </FooterCard>
-                    <NowPlaying current={{
-                        title: "Katamari on the Rocks",
-                        game: "Katamari Damacy",
-                        system: "PS2",
-                        year: "2003"
-                    }}
-                        next={{
-                            title: "Castle (Super Mario World) - Mix",
-                            game: "Super Mario Maker",
-                            year: "2015",
-                            system: "Wii U, 3DS"
-                        }}
-                        highestBid={14}
-                    />
+                    <NowPlaying />
                     <FooterCard title="Support TPP">
                     </FooterCard>
                 </Triplet>

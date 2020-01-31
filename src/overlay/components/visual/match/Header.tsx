@@ -4,15 +4,13 @@ import Logo from '..//Logo';
 import Countdown from '../Countdown';
 import Clock from '../Clock';
 import './Header.css';
+import NextGame from './NextGame';
 
 export default class Header extends React.Component {
     render() {
         return <div className="match-header">
             <Triplet>
-                <div className="next-game">
-                    <div className="label">Next Game:</div>
-                    <Countdown label="Pokemon Dual Gold Silver" countingTo={new Date("2020-02-13T01:22:00Z")}/>
-                </div>
+                <NextGame />
                 <Logo />
                 <div className="view-stats">
                     <Clock />

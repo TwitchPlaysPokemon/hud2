@@ -3,23 +3,14 @@ import FooterCard from './FooterCard';
 import musicIcon from '../../../img/toons.png';
 import FitToWidth from '../../mechanical/FitToWidth';
 import './NowPlaying.css';
+import { MusicState } from '../../../../reducers/music';
+import { connect } from 'react-redux';
+import { ApplicationState } from '../../../../reducers';
 
-type Song = {
-    title: string;
-    game?: string;
-    year?: string;
-    system?: string;
-}
-type NowPlayingProps = {
-    current: Song;
-    next?: Song;
-    highestBid?: number;
-}
-
-export default class NowPlaying extends React.Component<NowPlayingProps> {
+class NowPlaying extends React.Component<MusicState> {
     render() {
         return <FooterCard className="now-playing" callToAction="Fancy something else? Bid on tracks with tokens!">
-            <img src={musicIcon} alt=""/>
+            <img src={musicIcon} alt="" />
             <div>
                 <FitToWidth className="track-name">
                     {this.props.current.title}
@@ -37,3 +28,5 @@ export default class NowPlaying extends React.Component<NowPlayingProps> {
         </FooterCard>;
     }
 }
+
+export default connect((state: ApplicationState) => state.music)(NowPlaying);

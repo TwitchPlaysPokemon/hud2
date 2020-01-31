@@ -6,13 +6,13 @@ export interface ProfileState {
 
 export interface ChangeModeAction { type: "Change Mode", mode: ProfileState["mode"] }
 
-type KnownAction = ChangeModeAction;
+type KnownActions = ChangeModeAction;
 
 const DefaultState = (): ProfileState => ({ mode: "match" });
 
 const reducer:Reducer = (state: ProfileState, incomingAction: Action) => {
     state = state || DefaultState();
-    const action = incomingAction as KnownAction;
+    const action = incomingAction as KnownActions;
     //const mode = state.mode;
 
     switch (action.type) {
