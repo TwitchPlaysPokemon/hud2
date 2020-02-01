@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './FooterCard.css';
+import './FooterCard.scss';
 
 export default class FooterCard extends React.Component<{ title?: string; callToAction?: string; className?: string; }> {
     render() {

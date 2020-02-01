@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Triplet from '../../structural/Triplet';
-import './Footer.css';
+import './Footer.scss';
 import Pinball from '../Pinball';
 import Sidegame from '../Sidegame';
 import FooterCard from './FooterCard';

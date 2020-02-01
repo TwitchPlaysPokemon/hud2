@@ -1,0 +1,34 @@
+.now-playing {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+
+    > img {
+        height: 3em;
+        flex: 0 0 auto;
+        margin-right: .25em;
+    }
+
+    > div {
+        flex: 0 1 auto;
+        max-width: 80%;
+    }
+
+    .fit-to-width-container {
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .track-name {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .track-info {
+        font-weight: lighter;
+        margin-top: .1em;
+        margin-bottom: .3em;
+    }
+}

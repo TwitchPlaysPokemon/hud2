@@ -1,9 +1,8 @@
 import * as React from 'react';
 import Triplet from '../../structural/Triplet';
-import Logo from '..//Logo';
-import Countdown from '../Countdown';
+import Logo from '../Logo';
 import Clock from '../Clock';
-import './Header.css';
+import './Header.scss';
 import NextGame from './NextGame';
 
 export default class Header extends React.Component {

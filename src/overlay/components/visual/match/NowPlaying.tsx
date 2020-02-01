@@ -2,7 +2,7 @@ import * as React from 'react';
 import FooterCard from './FooterCard';
 import musicIcon from '../../../img/toons.png';
 import FitToWidth from '../../mechanical/FitToWidth';
-import './NowPlaying.css';
+import './NowPlaying.scss';
 import { MusicState } from '../../../../reducers/music';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../../../../reducers';
