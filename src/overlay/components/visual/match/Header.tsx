@@ -2,6 +2,7 @@ import * as React from 'react';
 import Triplet from '../../structural/Triplet';
 import Logo from '../Logo';
 import Clock from '../Clock';
+import ViewStats from '../ViewStats';
 import './Header.scss';
 import NextGame from './NextGame';
 
@@ -13,9 +14,7 @@ export default class Header extends React.Component {
                 <Logo />
                 <div className="view-stats">
                     <Clock />
-                    <div>
-                        <span>9999 viewers</span>
-                    </div>
+                    <ViewStats />
                 </div>
             </Triplet>
         </div>

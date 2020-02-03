@@ -10,15 +10,15 @@ export default class Footer extends React.Component {
     render() {
         return <div className="match-footer">
             <Triplet>
-                <Pinball />
+                <Sidegame />
                 <Triplet>
-                    <FooterCard title="Pokémon Pinball">
-                    </FooterCard>
-                    <NowPlaying />
                     <FooterCard title="Support TPP">
                     </FooterCard>
+                    <NowPlaying />
+                    <FooterCard title="Pokémon Pinball">
+                    </FooterCard>
                 </Triplet>
-                <Sidegame />
+                <Pinball />
             </Triplet>
         </div>
     }
