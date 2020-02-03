@@ -6,8 +6,7 @@ export interface ViewersState {
 }
 
 export interface UpdateViewersAction {type: "Update Viewers",
-    viewers: ViewersState["viewers"],
-    change: ViewersState["change"]}
+    viewers: ViewersState["viewers"]}
 
 type KnownActions = UpdateViewersAction;
 
@@ -23,7 +22,7 @@ const reducer: Reducer = (state: ViewersState, incomingAction: Action) => {
     switch (action.type)
     {
         case "Update Viewers":
-            return { viewers: action.viewers, change: action.change };
+            return { viewers: action.viewers, change: action.viewers - state.viewers };
     }
     return state;
 };

@@ -1,22 +1,18 @@
 import * as React from 'react';
 import './ViewStats.scss';
-import viewersUp from '../../img/Header/ViewersUp.svg';
-import viewersDown from '../../img/Header/ViewersDown.svg';
-import viewCount from '../../img/Header/ViewCount.svg';
 import {ViewersState} from "../../../reducers/viewers";
 import { connect } from "react-redux";
 import { ApplicationState } from "../../../reducers";
 
 class ViewStats extends React.Component<ViewersState> {
     render() {
+        let _class = "viewer-change " + (this.props.change < 0 ? "arrow-down" : "");
         return <div className="viewers">
             <span className="viewer-count">
-                <img src={viewCount} alt="View Count"/>
-                <span>{this.props.viewers}</span>
+                {this.props.viewers}
             </span>
-            <span className="viewer-change">
-                <img className="change" src={(this.props.change >= 0 ? viewersUp : viewersDown)} alt="Viewer Change"/>
-                <span>{this.props.change}</span>
+            <span className={_class}>
+                {Math.abs(this.props.change)}
             </span>
         </div>
     }
