@@ -9,7 +9,7 @@ export default abstract class RunEachFrame<P = {}, S = {}> extends React.Compone
         this.onEachFrame();
         requestAnimationFrame(() => this.tick());
     }
-    componentWillMount() {
+    componentDidMount() {
         this.run = true;
         this.tick();
     }
