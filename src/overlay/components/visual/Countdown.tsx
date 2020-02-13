@@ -2,7 +2,7 @@ import * as React from 'react';
 import RunEachFrame from '../mechanical/RunEachFrame';
 import Duration from '../../utils/duration';
 import './Countdown.scss';
-import ZeroPad from '../../utils/zeropad';
+import Odometer from "../mechanical/Odometer";
 
 type CountdownProps = {
     onTimeUp?: () => void;
@@ -33,7 +33,7 @@ export default class Countdown extends RunEachFrame<CountdownProps, { timeLeftSe
             in
             <span className="duration">
                 {Object.keys(duration).map(d => <span key={d}>
-                    <span>{ZeroPad(duration[d], 2)}</span>
+                    <Odometer pad={2} num={duration[d]} padChar={"0"} />
                     {d}
                 </span>)}
             </span>

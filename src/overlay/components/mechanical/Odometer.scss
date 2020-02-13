@@ -1,0 +1,65 @@
+.digit {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+
+    &::before {
+        display: inline-block;
+        content: attr(data-old);
+        width: 0;
+        animation: roll-digit-from-top 0.5s ease-in both reverse;
+        transform-origin: bottom center;
+    }
+
+    &::after {
+        display: inline-block;
+        content: attr(data-new);
+        animation: roll-digit-from-bottom 0.5s ease-out both normal;
+        transform-origin: top center;
+    }
+
+    &[data-old=' ']::before {
+        content: '0';
+        opacity: 0;
+    }
+
+    &[data-new=' ']::after {
+        content: '0';
+        opacity: 0;
+    }
+
+    &.backwards {
+        &::before {
+            animation-name: roll-digit-from-bottom;
+            transform-origin: top center;
+        }
+
+        &::after {
+            animation-name: roll-digit-from-top;
+            transform-origin: bottom center;
+        }
+    }
+}
+
+@keyframes roll-digit-from-top {
+    0% {
+        transform: translateY(-1em)rotateX(90deg);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes roll-digit-from-bottom {
+    0% {
+        transform: translateY(1em)rotateX(-90deg);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+.odometer {
+    display: inline-block;
+}
