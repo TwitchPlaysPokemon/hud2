@@ -4,21 +4,13 @@
     flex-wrap: nowrap;
     flex: 0 0 auto;
     align-items: center;
-
-    .pkmn-badge {
-        display: inline-block;
-        position: relative;
-        width: 40px;
-        height: 30px;
-        img {
-            image-rendering: pixelated;
-            display: block;
-            position: absolute;
-        }
-    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
     .name {
         flex: 1 1 auto;
-        padding-top: 0.4em; //temporary hack for centre alignment
+        font-size: 1.25em;
+        padding-top: 0.2em; //temporary hack for centre alignment
     }
 }

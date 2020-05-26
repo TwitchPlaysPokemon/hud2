@@ -1,5 +1,7 @@
 import * as React from 'react';
 import './User.scss'
+import Badge from "./Badge";
+import Emblem from "./Emblem";
 
 type UserProps = {
     firstEmblem?: number;
@@ -15,21 +17,14 @@ type UserProps = {
 
 export default class User extends React.Component<UserProps, {}> {
     shouldComponentUpdate(nextProps: UserProps): boolean {
-        return this.props.pokeBadge !== nextProps.pokeBadge && this.props.selectedEmblem !== nextProps.selectedEmblem;
+        return this.props.pokeBadge !== nextProps.pokeBadge || this.props.selectedEmblem !== nextProps.selectedEmblem;
     }
     render() {
         return <div className={"user"} id={this.props.userName}>
-            <div className={"pkmn-badge"}>{this.props.pokeBadge && <Badge id={this.props.pokeBadge} />}</div>
+            {this.props.firstEmblem &&
+            <Emblem firstEmblem={this.props.firstEmblem} selectedEmblem={this.props.selectedEmblem || this.props.firstEmblem}
+                    runCount={this.props.runCount} />}
+            {this.props.pokeBadge && <Badge id={this.props.pokeBadge} />}
             <div className={"name"}>{this.props.userName}</div></div>
-    }
-}
-
-export class Badge extends React.Component<{id: string}, {}> {
-    shouldComponentUpdate(nextprops: {id: string}): boolean {
-        return nextprops.id !== this.props.id;
-    }
-    render() {
-        return <img src={`https://twitchplayspokemon.tv/static/pkmn-badges/${this.props.id}.png`}
-                    alt={this.props.id} />
     }
 }
