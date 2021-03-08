@@ -1,0 +1,302 @@
+@mixin emblem($number, $background: white, $foreground: black, $border-color: none, $middle-border-color: none) {
+    &[data-selected="#{$number}"] {
+        color: $foreground;
+        background-color: darken($background, 20%);
+        @if $border-color != none {
+            border: 1px solid $border-color;
+        }
+        @else {
+            border: 1px solid black;
+        }
+        .first {
+            background-color: $background;
+            @if $middle-border-color != none {
+                border-right: 1px solid $middle-border-color;
+            }
+            @else if $border-color != none {
+                border-right: 1px solid $border-color;
+            }
+            @else {
+                border-right: 1px solid darken($background, 40%);
+            }
+        }
+        .count {
+            color: darken($foreground, 30%);
+        }
+        @content;
+    }
+}
+
+.emblem {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    border-radius: 3px;
+    margin: 0 4px;
+    padding-right: 0.2em;
+    font-size: 0.9em;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    .first {
+        display: inline-block;
+        border-radius: inherit;
+        padding: 0.2em 2px 0 2px;
+        margin-right: 2px;
+        min-width: 0.75em;
+    }
+    .count {
+        padding-bottom: 0.05em; //needed for alignment, idk why
+    }
+    &[data-count="1"] {
+        padding-right: 0;
+        .first {
+            margin-right: 0;
+            border-right: 0;
+        }
+    }
+
+    @include emblem("1", white, white); //red
+
+    @include emblem("2", #a983ca, white); //crystal
+
+    @include emblem("3", #20c66e, white); //emerald
+
+    @include emblem("4", #ff9935, white); //randomised firered
+
+    @include emblem("5", grey, white); //platinum
+
+    @include emblem("6", #daa520, white); //randomized heartgold
+
+    @include emblem("7", black, white, white); //black
+
+    @include emblem("8", black, #abe9f4, white) { //blaze black 2
+        .count {
+            color: #2dc8e4;
+        }
+    }
+
+    @include emblem("9", #00609c, white, white); //x
+
+    @include emblem("10", #d1171a, white); //omega ruby
+
+    @include emblem("11", white, black) { //anniversary red
+        text-shadow: none;
+    }
+
+    @include emblem("12", pink, white); //moemon/touhoumon
+
+    @include emblem("13", #0193d2, white); //randomised alpha sapphire
+
+    @include emblem("14", red, black) { //colosseum
+        text-shadow: none;
+    }
+
+    @include emblem("15", #7d7db5, black) { //xd
+        text-shadow: none;
+    }
+
+    @include emblem("16", #6441a4, white); //anniversary crystal
+
+    @include emblem("17", #752424, white); //brown
+
+    @include emblem("18", #b0b1ae, white); //randomised platinum
+
+    @include emblem("19", red, white) { //prism
+        animation: prism-rainbow 10s linear 0s infinite;
+    }
+
+    @include emblem("20", #ff7000, white); //sun
+
+    @include emblem("21", #2020a0, white); //waning moon
+
+    @include emblem("22", yellow, black) { //chatty yellow
+        text-shadow: none;
+    }
+
+    @include emblem("23", #f97dd4, white); //blazed glazed
+
+    @include emblem("24", #fff6ed, white, white); //randomized white 2
+
+    @include emblem("25", #9f7f57, white); //pyrite
+
+    @include emblem("26", green, white, white); //theta emerald ex
+
+    @include emblem("27", #34373b, #f9dfa6, white); //ultra sun
+
+    @include emblem("28", transparent, white, none, rgba(0, 0, 0, 0.7)) { //dual red blue
+        background: repeating-linear-gradient(270deg, #117bfa, #fe0102, #117bfa);
+        background-size: 300%;
+        animation: slide-background 20s infinite linear reverse;
+    }
+
+    @include emblem("29", #b5bdc5, #c3e1ff, #278fe5, #2fa3fa) { //storm silver
+        background: linear-gradient(#dfdfdf, #b5bdc5);
+        background-size: 100%;
+        .first {
+            color: #c3e1ff;
+            background-color: transparent;
+        }
+        .count {
+            color: #7a9cff
+        }
+    }
+
+    @include emblem("30", #ad7238, white) { //bronze
+        background: linear-gradient(darken(#ad7238, 10%), darken(#b88656, 10%));
+        background-size: 100%;
+        .first {
+            background: linear-gradient(#ad7238, #b88656);
+        }
+    }
+
+    @include emblem("31", #d22445, white, white); //randomised y
+
+    @include emblem("32", #71eeb8, #ee71a7) { //flora sky
+        text-shadow: none;
+    }
+
+    @include emblem("33", transparent, #ae00d9, none, white) { //fused crystal
+        text-shadow: none;
+        background: linear-gradient(-90deg, #2989cc 0%, #ffffff 100%);
+        .first {
+            color: red;
+        }
+        .count {
+            color: darkgreen;
+        }
+    }
+
+    @include emblem("34", transparent, white, white) { //burning red
+        background: url("../../../img/2fire.jpg") center;
+        animation: slide-background-y 20s infinite linear reverse;
+        .first {
+            color: white;
+            background: none;
+        }
+        .count {
+            background: none;
+        }
+    }
+
+    @include emblem("35", #edf6ff, white); //volt white
+
+    @include emblem("36", #de0605, black, #b79c97) { //randomised colosseum
+        text-shadow: none;
+    }
+
+    @include emblem("37", #e23b69, black) { //xg
+        text-shadow: none;
+    }
+
+    @include emblem("38", #07825b, #f8c800) { //trihard emerald
+        text-shadow: -1px -1px 0 #6a2400, 1px -1px 0 #6a2400, -1px 1px 0 #6a2400, 1px 1px 0 #6a2400
+    }
+
+    @include emblem("39", #34373b, #b3ddf0, white); //randomised ultra moon
+
+    @include emblem("40", #00a0e9, black) { //sword
+        text-shadow: none;
+    }
+
+    @include emblem("41", white, white) { //gauntlet red
+        background-position: bottom right;
+        background-size: 200% 100%;
+        background-repeat: no-repeat;
+        background-image: radial-gradient(ellipse at bottom, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0) 41%, rgba(255, 0, 0, 1) 45%, rgba(255, 0, 0, 0) 70%);
+        background-color: white;
+        .first {
+            background-color: transparent;
+        }
+    }
+
+    @include emblem("42", #a983ca, white) { //gauntlet crystal
+        background-position: bottom right;
+        background-size: 200% 100%;
+        background-repeat: no-repeat;
+        background-image: radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 1) 45%, rgba(255, 255, 255, 0) 70%);
+        background-color: #a983ca;
+        .first {
+            background-color: transparent;
+        }
+    }
+
+    @include emblem("43", #20c66e, white) { //gauntlet emerald
+        background-position: bottom right;
+        background-size: 200% 100%;
+        background-repeat: no-repeat;
+        background-image: radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 1) 45%, rgba(255, 255, 255, 0) 70%);
+        background-color: #20c66e;
+        .first {
+            background-color: transparent;
+        }
+    }
+
+    @include emblem("44", grey, white) { //gauntlet platinum
+        background-position: bottom right;
+        background-size: 200% 100%;
+        background-repeat: no-repeat;
+        background-image: radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 1) 45%, rgba(255, 255, 255, 0) 70%);
+        background-color: grey;
+        .first {
+            background-color: transparent;
+        }
+    }
+
+    @include emblem("45", black, #abe9f4, white) { //gauntlet blaze black 2
+        background-position: bottom right;
+        background-size: 200% 100%;
+        background-repeat: no-repeat;
+        background-image: radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 1) 45%, rgba(255, 255, 255, 0) 70%);
+        background-color: black;
+        .first {
+            background-color: transparent;
+        }
+        .count {
+            color: #2dc8e4;
+        }
+    }
+
+    @include emblem("46", #00609c, white, white) { //gauntlet x
+        background-position: bottom right;
+        background-size: 200% 100%;
+        background-repeat: no-repeat;
+        background-image: radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 1) 45%, rgba(255, 255, 255, 0) 70%);
+        background-color: #00609c;
+        .first {
+            background-color: transparent;
+        }
+    }
+
+    @include emblem("47", #083860, #00b0a8) { //sirius
+        background-color: #052744;
+        .count {
+            color: #007C77;
+        }
+    }
+}
+
+@keyframes prism-rainbow {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes slide-background {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 300% 0;
+    }
+}
+
+@keyframes slide-background-y {
+    0% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: 100%;
+    }
+}

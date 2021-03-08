@@ -1,0 +1,30 @@
+.viewers {
+    .viewer-count {
+        margin-right: 1.25em;
+
+        &::before {
+            content: url("../../img/Header/ViewCount.svg");
+            display: inline-block;
+            height: 0.9em;
+            width: 0.9em;
+            margin-right: 0.35em;
+            margin-top: 0.2em;
+        }
+    }
+    .viewer-change {
+        &::before {
+            content: url("../../img/Header/ViewersArrow.svg");
+            display: inline-block;
+            height: 0.9em;
+            width: 0.9em;
+            margin-right: 0.35em;
+            margin-top: 0.2em;
+            transition: transform .5s ease-in-out;
+        }
+        &.arrow-down {
+            &::before {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+}
